@@ -32,3 +32,9 @@
 ### VSCode Extention
   * [Prisma](vscode:Prisma.prisma)
   * [DotEMV](vscode:mikestead.dotenv)
+
+### Prisma
+  * 스키마 서버에 적용
+    ```bash
+    npx prisma db push
+    ```
