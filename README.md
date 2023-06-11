@@ -34,7 +34,7 @@
   * [DotEMV](vscode:mikestead.dotenv)
 
 ### Prisma
-  * 스키마 서버에 적용
+  * 스키마 서버에 적용 (superuser 권한이 필요한지는 확인해 봐야 함)
     ```bash
     npx prisma db push
     ```

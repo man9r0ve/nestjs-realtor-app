@@ -1,0 +1,6 @@
+### POST signup
+http://localhost:3000/auth/signup
+
+{
+
+}
