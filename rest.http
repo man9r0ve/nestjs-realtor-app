@@ -1,6 +1,10 @@
 ### POST signup
-http://localhost:3000/auth/signup
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
 
 {
-
+  "name":"sh",
+  "phone":"(010) 111 4544",
+  "email":"mangrove.sh@gmail.com",
+  "password":"p@ssw0rd"
 }
