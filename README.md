@@ -38,3 +38,8 @@
     ```bash
     npx prisma db push
     ```
+
+  * Prisma studio start
+    ```bash
+    npx prisma studio
+    ```
