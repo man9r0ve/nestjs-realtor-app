@@ -26,14 +26,14 @@
 
   * 클라우드에 설치 (aws, asure, heroku ...)
 
-### Libraries
+### 2. Libraries
   * ORM: [Prisma](https://prisma.io)
 
-### VSCode Extention
+### 3. VSCode Extention
   * [Prisma](vscode:Prisma.prisma)
   * [DotEMV](vscode:mikestead.dotenv)
 
-### Prisma
+### 4. Prisma
   * 스키마 서버에 적용 (superuser 권한이 필요한지는 확인해 봐야 함)
     ```bash
     npx prisma db push
@@ -43,3 +43,9 @@
     ```bash
     npx prisma studio
     ```
+
+### 5. 로직
+#### 로그인
+    - 이메일로 사용자 찾기
+    - 해시된 패스워드로 비교하기
+    - jwt 리턴하기

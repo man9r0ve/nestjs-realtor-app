@@ -5,6 +5,15 @@ Content-Type: application/json
 {
   "name":"SH",
   "phone":"(010) 111 4544",
-  "email":"mangrove.sh1@gmail.com",
+  "email":"mangrove.sh3@gmail.com",
+  "password":"p@ssw0rd"
+}
+
+### POST signin
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email":"mangrove.sh2@gmail.com",
   "password":"p@ssw0rd"
 }
