@@ -9,6 +9,18 @@ Content-Type: application/json
   "password":"p@ssw0rd"
 }
 
+### POST signup
+POST http://localhost:3000/auth/signup/REALTOR
+Content-Type: application/json
+
+{
+  "name":"SH",
+  "phone":"(010) 111 4544",
+  "email":"mangrove.sh3@gmail.com",
+  "password":"p@ssw0rd",
+  "productKey": "$2a$10$kllb3McB4N0yRFZ4/c6ETeeYTn0YxMffs8XJAw5dttQb5aBz7mTp6"
+}
+
 ### POST signin
 POST http://localhost:3000/auth/signin
 Content-Type: application/json
@@ -16,4 +28,13 @@ Content-Type: application/json
 {
   "email":"mangrove.sh2@gmail.com",
   "password":"p@ssw0rd"
+}
+
+### POST Generate Product Key
+POST http://localhost:3000/auth/key
+Content-Type: application/json
+
+{
+  "email":"mangrove.sh3@gmail.com",
+  "userType":"REALTOR"
 }
