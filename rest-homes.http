@@ -1,5 +1,6 @@
 ### Get All Homes
-GET http://localhost:3000/home
+GET http://localhost:3000/home?city=경기도&minPrice=10000
+Content-Type: application/json; charset=utf-8
 
 ### Get Home By Id
 GET http://localhost:3000/home/1
