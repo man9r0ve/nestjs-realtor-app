@@ -49,3 +49,11 @@
     - 이메일로 사용자 찾기
     - 해시된 패스워드로 비교하기
     - jwt 리턴하기
+
+#### 중개사
+    - GET    /home     : 매물 리스트
+    - GET    /home/:id : 매물 상세
+    - POST   /home     : 매물 등록
+    - PUT    /home/:id : 매물 수정
+    - DELETE /home/:id : 매물 삭제
+    - POST   /home/:id : 매물 문의

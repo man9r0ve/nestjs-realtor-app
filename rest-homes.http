@@ -1,0 +1,15 @@
+### Get All Homes
+GET http://localhost:3000/home
+
+### Get Home By Id
+GET http://localhost:3000/home/1
+
+### Create Home
+POST http://localhost:3000/home
+Content-Type: application/json; charset=utf-8
+
+### Update Home
+PUT http://localhost:3000/home/1
+
+### Delete Home
+DELETE http://localhost:3000/home/1
