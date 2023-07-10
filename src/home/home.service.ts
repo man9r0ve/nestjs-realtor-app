@@ -23,6 +23,16 @@ interface CreateHomeParams {
   images: { url: string }[];
 }
 
+interface UpdateHomeParams {
+  address?: string;
+  numberOfBedrooms?: number;
+  numberOfBathrooms?: number;
+  city?: string;
+  price?: number;
+  landSize?: number;
+  propertyType?: PropertyType;
+}
+
 const homeSelect = {
   id: true,
   address: true,
@@ -120,5 +130,50 @@ export class HomeService {
     await this.prismaService.image.createMany({ data: homeImages });
 
     return new HomeResponseDto(home);
+  }
+
+  async updateHomById(id: number, data: UpdateHomeParams) {
+    const home = await this.prismaService.home.findUnique({
+      where: { id },
+    });
+
+    if (!home) {
+      throw new NotFoundException();
+    }
+
+    const updatedHome = await this.prismaService.home.update({
+      where: { id },
+      data,
+    });
+
+    return new HomeResponseDto(updatedHome);
+  }
+
+  /**
+   * id 로 매물 삭제
+   * @param id
+   */
+  async deleteHomeById(id: number) {
+    const home = await this.prismaService.home.findUnique({
+      where: { id },
+    });
+
+    if (!home) {
+      throw new NotFoundException();
+    }
+
+    // Image 테이블에 fk가 걸려있어 삭제가 되지 않기 때문에 Image 먼저 삭제
+    await this.prismaService.image.deleteMany({
+      where: {
+        home_id: id,
+      },
+    });
+
+    // Home 테이블 데이터 삭제
+    await this.prismaService.home.delete({
+      where: {
+        id,
+      },
+    });
   }
 }

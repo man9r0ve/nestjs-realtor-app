@@ -29,7 +29,13 @@ Content-Type: application/json; charset=utf-8
 }
 
 ### Update Home
-PUT http://localhost:3000/home/1
+PUT http://localhost:3000/home/3
+Content-Type: application/json; charset=utf-8
+
+{
+  "address": "김포시 풍무로 51"
+}
 
 ### Delete Home
-DELETE http://localhost:3000/home/1
+DELETE http://localhost:3000/home/3
+Content-Type: application/json; charset=utf-8
