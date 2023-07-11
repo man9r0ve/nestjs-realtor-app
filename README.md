@@ -57,3 +57,10 @@
     - PUT    /home/:id : 매물 수정
     - DELETE /home/:id : 매물 삭제
     - POST   /home/:id : 매물 문의
+
+#### 중개사 매물 등록 시 realtor_id 가져오는 방법
+  - 중개사가 매물을 등록 할 때는 로그인이 되어있다는 가정하에 이미 jwt 토큰값을 가지고 있음
+  - jwt 토큰에서 payload 부분을 decode 하면 user_id 를 얻을 수 있다.
+  - 이 부분은 interceptor 에서 처리
+  - interceptor 는 `app.module.ts` 에서 `provider` 에 추가하여 등록
+  - request -> JWT -> User -> request

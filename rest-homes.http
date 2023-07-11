@@ -9,6 +9,7 @@ Content-Type: application/json; charset=utf-8
 ### Create Home
 POST http://localhost:3000/home
 Content-Type: application/json; charset=utf-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU0giLCJpZCI6NSwiaWF0IjoxNjg5MDg2MjAzLCJleHAiOjE2OTI2ODYyMDN9.W5KWfQ14zHGZUIi6MIfxzVhMBuCrRUfiDJbGBFiiOHo
 
 {
   "address": "김포시 풍무로 50",
