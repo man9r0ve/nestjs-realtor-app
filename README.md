@@ -56,7 +56,7 @@
     - POST   /home     : 매물 등록
     - PUT    /home/:id : 매물 수정
     - DELETE /home/:id : 매물 삭제
-    - POST   /home/:id : 매물 문의
+    - POST   /home/:id/inqure : 매물 문의
 
 #### 중개사 매물 등록 시 realtor_id 가져오는 방법
   - 중개사가 매물을 등록 할 때는 로그인이 되어있다는 가정하에 이미 jwt 토큰값을 가지고 있음

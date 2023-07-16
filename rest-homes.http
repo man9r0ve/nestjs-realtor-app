@@ -9,7 +9,7 @@ Content-Type: application/json; charset=utf-8
 ### Create Home
 POST http://localhost:3000/home
 Content-Type: application/json; charset=utf-8
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU0giLCJpZCI6NywiaWF0IjoxNjg5MzQ5NjgxLCJleHAiOjE2OTI5NDk2ODF9.ZE6n7h5gtkQePzbGi3nqgHER_yTkOitXQotguJBjsg0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU0giLCJpZCI6NywiaWF0IjoxNjg5NDI4MzEwLCJleHAiOjE2OTMwMjgzMTB9.B-fq9yMxAiW4zsIOMIbeNV6xUkmv_g6EHLkglrRVRyo
 
 {
   "address": "김포시 풍무로 50",
@@ -42,3 +42,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU0giLCJpZ
 DELETE http://localhost:3000/home/3
 Content-Type: application/json; charset=utf-8
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU0giLCJpZCI6NSwiaWF0IjoxNjg5MDg2MjAzLCJleHAiOjE2OTI2ODYyMDN9.W5KWfQ14zHGZUIi6MIfxzVhMBuCrRUfiDJbGBFiiOHo
+
+
+### Inquire Home
+POST http://localhost:3000/home/3/inquire
+Content-Type: application/json; charset=utf-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU0giLCJpZCI6NSwiaWF0IjoxNjg5NTE3OTQ3LCJleHAiOjE2OTMxMTc5NDd9.7yIlZhRVT2TCIsIAZLXHF5wqQh03bDV0RwNnEf9AnhY
+
+{
+  "message": "Hello, i like this home"
+}
+
+### Fine message by Home id
+GET http://localhost:3000/home/3/message
+Content-Type: application/json; charset=utf-8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU0giLCJpZCI6NywiaWF0IjoxNjg5NTE5MTU3LCJleHAiOjE2OTMxMTkxNTd9.ymVRllfGMO-ib0qDBcJESbEmjEpQOKoVAwE70ujH6b4
