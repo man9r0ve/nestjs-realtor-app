@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { CreateHomeDto, HomeResponseDto } from './dto/home.dto';
-import { PropertyType, User } from '@prisma/client';
+import { HomeResponseDto } from './dto/home.dto';
+import { PropertyType } from '@prisma/client';
 import { UserInfo } from 'src/user/decorators/user.decorator';
 
 interface GetHomesParam {
@@ -34,7 +34,7 @@ interface UpdateHomeParams {
   propertyType?: PropertyType;
 }
 
-const homeSelect = {
+export const homeSelect = {
   id: true,
   address: true,
   city: true,
@@ -48,7 +48,7 @@ const homeSelect = {
 export class HomeService {
   constructor(private readonly prismaService: PrismaService) {}
 
-  async getHomes(filters: GetHomesParam): Promise<HomeResponseDto[]> {
+  async getHomes(filter: GetHomesParam): Promise<HomeResponseDto[]> {
     const homes = await this.prismaService.home.findMany({
       select: {
         ...homeSelect,
@@ -59,7 +59,7 @@ export class HomeService {
           take: 1,
         },
       },
-      where: filters,
+      where: filter,
     });
 
     if (!homes.length) {
@@ -136,7 +136,7 @@ export class HomeService {
     return new HomeResponseDto(home);
   }
 
-  async updateHomById(id: number, data: UpdateHomeParams) {
+  async updateHomeById(id: number, data: UpdateHomeParams) {
     const home = await this.prismaService.home.findUnique({
       where: { id },
     });

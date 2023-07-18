@@ -71,11 +71,13 @@ export class HomeController {
   ) {
     const realtor = await this.homeService.getRealtorByHomeId(id);
 
+    console.log(realtor.id, user.id);
+
     if (realtor.id !== user.id) {
       throw new UnauthorizedException();
     }
 
-    return this.homeService.updateHomById(id, body);
+    return this.homeService.updateHomeById(id, body);
   }
 
   @Roles(UserType.REALTOR, UserType.ADMIN)
